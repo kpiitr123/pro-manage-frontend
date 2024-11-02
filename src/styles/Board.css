@@ -1,0 +1,152 @@
+.board-container {
+  padding: 20px; /* Slightly reduced padding */
+  height: calc(100vh - 40px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+  
+  .board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .board-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .board-controls {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .filter-select {
+    padding: 8px 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .filter-select:focus {
+    outline: none;
+    border-color: #317F8B;
+  }
+  
+  .board-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; /* Reduced from 24px to match the image */
+    flex: 1;
+    overflow: hidden;
+}
+
+  
+  .board-column {
+    background-color: #EEF2F5;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+  
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: none; /* Remove the border */
+}
+  
+.column-header h2 {
+  font-size: 16px;
+  font-weight: 500; /* Slightly lighter weight to match design */
+  color: #333;
+}
+  
+  .column-header-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .collapse-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .collapse-button:hover {
+    color: #333;
+  }
+  
+  .add-task-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #317F8B;
+    font-size: 20px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .add-task-button:hover {
+    color: #276A74;
+  }
+  
+  .tasks-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+  
+  .tasks-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .tasks-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .tasks-container::-webkit-scrollbar-thumb {
+    background: #BDBDBD;
+    border-radius: 4px;
+  }
+  
+  .tasks-container::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
+  
+  @media (max-width: 1200px) {
+    .board-columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .board-columns {
+      grid-template-columns: 1fr;
+    }
+    
+    .board-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }

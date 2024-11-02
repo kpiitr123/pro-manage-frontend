@@ -1,0 +1,189 @@
+.task-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E0E0E0;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center align */
+  margin-bottom: 12px;
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Space between priority badge and assignees */
+}
+
+.priority-badge {
+  padding: 4px 0px;
+  border-radius: 4px;
+  font-size: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.priority-high {
+  background-color: #FFE2E2;
+  color: #EA5555;
+}
+
+.priority-low {
+  background-color: #E8F5E9;
+  color: #219653;
+}
+
+.assignees {
+  display: flex;
+  align-items: center;
+  gap: -2px; /* Space between assignee avatars */
+}
+
+.assignee-avatar {
+  width: 15px;
+  height: 15px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: #317F8B;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.task-menu {
+  position: relative;
+}
+
+.three-dots {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.menu-item {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.delete {
+  color: red;
+}
+
+.task-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.checklist-container {
+  margin-bottom: 12px;
+}
+
+.checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.checklist-progress {
+  font-size: 14px;
+  color: #666;
+}
+
+.checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checklist-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #E0E0E0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checklist-checkbox.checked {
+  background-color: #317F8B;
+  border-color: #317F8B;
+}
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.due-date {
+  background-color: red; /* Red background */
+  color: white; /* White font */
+  padding: 2px 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  font-size: 8px;
+  line-height: 12px;
+}
+
+.overdue {
+  background-color: darkred; /* Dark red for overdue tasks */
+}
+
+.status-buttons {
+  display: flex;
+  gap: 3px; /* Space between status buttons */
+}
+
+.status-button {
+  padding: 3px 6px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 8px;
+  line-height: 12px;
+}
+
+.status-button.active {
+  background-color: #5A9;
+  color: white;
+}
+
+.status-button:hover {
+  background-color: #ccc;
+}

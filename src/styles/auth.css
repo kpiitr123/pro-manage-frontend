@@ -1,0 +1,178 @@
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.auth-left {
+  flex: 1;
+  background-color: #317F8B;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: white;
+}
+
+.auth-illustration-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin-bottom: 2rem;
+}
+
+.auth-illustration-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.auth-illustration {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.welcome-text {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.welcome-subtext {
+  font-size: 1rem;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.auth-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 12px 40px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #F5F5F5;
+    
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #317F8B;
+   
+  }
+  
+  .input-icon {
+    position: absolute;
+    top:10px;
+    left: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #138496;
+  }
+  
+  .auth-button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #317F8B;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-button:hover {
+    background-color: #276A74;
+  }
+  
+  .auth-link {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #666;
+  }
+  
+  .auth-link-button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: transparent;
+    color: #317F8B;
+    border: 1px solid #317F8B;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .auth-link-button:hover {
+    background-color: #317F8B;
+    color: white;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top:12px;
+    right: 12px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

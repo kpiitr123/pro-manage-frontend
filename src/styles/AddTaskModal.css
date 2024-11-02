@@ -1,0 +1,267 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 580px;
+  position: relative;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.required {
+  color: #CF3636;
+}
+
+modal-form > .form-input,
+.form-select {
+  padding: 12px 16px;
+  border: 1px solid #E2E2E2;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  background-color: white;
+}
+
+modal-form > .form-input::placeholder,
+.form-select::placeholder {
+  color: #999999;
+}
+
+.priority-options {
+  display: flex;
+  gap: 12px;
+}
+
+.priority-option {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  border: none;
+  background-color: #F5F5F5;
+  color: #8A8A8A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.priority-option::before {
+  content: "•";
+  font-size: 20px;
+}
+
+.priority-option.high.selected {
+  background-color: #FFE2E2;
+  color: #CF3636;
+}
+
+.priority-option.moderate.selected {
+  background-color: #FFF5E9;
+  color: #EE8434;
+}
+
+.priority-option.low.selected {
+  background-color: #E9F7EF;
+  color: #17A2B8;
+}
+
+.checklist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E2E2;
+}
+
+.checklist-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #E2E2E2;
+  border-radius: 4px;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.checklist-checkbox:checked {
+  background-color: #17A2B8;
+  border-color: #17A2B8;
+}
+
+.checklist-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  left: 2px;
+  top: 0px;
+}
+
+.checklist-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.checklist-input:focus {
+  outline: none;
+}
+
+.checklist-delete {
+  background: none;
+  border: none;
+  color: #CF3636;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.delete-icon {
+  font-size: 16px;
+}
+
+.add-checklist-button {
+  color: #8A8A8A;
+  background: none;
+  border: none;
+  padding: 8px 0;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 500;
+}
+
+.assignee-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0EA5E9, #2563EB);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Date picker specific styles */
+.react-datepicker-wrapper {
+  position: absolute;
+  bottom: 80px;
+  left: 32px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.react-datepicker {
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: inherit !important;
+}
+
+.react-datepicker__header {
+  background-color: white !important;
+  border-bottom: none !important;
+  padding-top: 16px !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: #17A2B8 !important;
+  border-radius: 4px !important;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #E2E2E2;
+}
+
+.date-picker-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #E2E2E2;
+  background-color: white;
+  font-size: 14px;
+  color: #8A8A8A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 150px;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+}
+
+.cancel-button {
+  padding: 8px 24px;
+  border-radius: 8px;
+  border: 1px solid #CF3636;
+  background: white;
+  color: #CF3636;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.save-button {
+  padding: 8px 24px;
+  border-radius: 8px;
+  background-color: #17A2B8;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.save-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
