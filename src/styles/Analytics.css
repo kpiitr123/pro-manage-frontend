@@ -1,0 +1,58 @@
+.analytics-container {
+  padding: 20px;
+}
+
+.analytics-container h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.analytics-cards {
+  display: flex;
+  gap: 16px;
+}
+
+.analytics-card {
+  max-width: 400px;
+  background-color: #EEF7F7;
+  border-radius: 8px;
+  padding: 16px;
+  flex: 1;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.analytics-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+.analytics-card .item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Controls the spacing between dot and text */
+}
+
+.analytics-card .dot {
+  height: 8px;
+  width: 8px;
+  background-color: #86C5C2;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.analytics-card .count {
+  font-weight: 600;
+  color: #333;
+}

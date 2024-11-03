@@ -5,12 +5,15 @@ import TaskCard from '../components/TaskCard';
 import AddTaskModal from '../components/AddTaskModal';
 import '../styles/Board.css';
 import moment from 'moment';
+import { FaUserPlus } from 'react-icons/fa';
+import AddPeopleModal from '../components/AddPeopleModal';
 
 const Board = () => {
   const [tasks, setTasks] = useState([]);
   const [user, setUser] = useState(null);
   const [filter, setFilter] = useState('week');
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isAddPeopleModalOpen, setIsAddPeopleModalOpen] = useState(false);
   const [collapsedSections, setCollapsedSections] = useState({
     backlog: false,
     todo: false,
@@ -34,6 +37,7 @@ const Board = () => {
   const fetchTasks = async () => {
     try {
       const response = await axiosInstance.get(`/tasks?filter=${filter}`);
+      console.log(response.data);
       setTasks(response.data);
     } catch (error) {
       toast.error('Error fetching tasks');
@@ -113,7 +117,16 @@ const Board = () => {
         </div>
       </div>
       <div className="board-header">
-        <h1>Board</h1>
+        <h1>Board
+        <button
+            className="add-people-button"
+            onClick={() => setIsAddPeopleModalOpen(true)}
+          >
+            
+            <FaUserPlus /> Add People
+          </button>
+        </h1>
+     
         <div className="board-controls">
           <select
             value={filter}
@@ -203,7 +216,7 @@ const Board = () => {
           </div>
           {!collapsedSections.inProgress && (
             <div className="tasks-container">
-              {getFilteredTasks('IN_PROGRESS').map(task => (
+              {getFilteredTasks('PROGRESS').map(task => (
                 <TaskCard
                   key={task._id}
                   task={task}
@@ -250,6 +263,13 @@ const Board = () => {
         <AddTaskModal
           onClose={() => setIsAddModalOpen(false)}
           onAdd={handleAddTask}
+        />
+      )}
+
+
+{isAddPeopleModalOpen && (
+        <AddPeopleModal
+          onClose={() => setIsAddPeopleModalOpen(false)}
         />
       )}
     </div>

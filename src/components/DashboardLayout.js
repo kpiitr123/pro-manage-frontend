@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation, useNavigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import '../styles/DashboardLayout.css';
@@ -7,10 +7,15 @@ const DashboardLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { logout } = useAuth();
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   const handleLogout = () => {
     logout();
+    navigate('/login'); // Redirect after logout
   };
+
+  const openLogoutModal = () => setShowLogoutModal(true);
+  const closeLogoutModal = () => setShowLogoutModal(false);
 
   return (
     <div className="dashboard-container">
@@ -63,7 +68,7 @@ const DashboardLayout = () => {
         </nav>
 
         <div className="logout-container">
-          <button onClick={handleLogout} className="logout-button">
+          <button onClick={openLogoutModal} className="logout-button">
             <svg className="logout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
               <path d="M16 17l5-5-5-5" />
@@ -77,6 +82,16 @@ const DashboardLayout = () => {
       <main className="main-content">
         <Outlet />
       </main>
+
+      {showLogoutModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <p>Are you sure you want to Logout?</p>
+            <button className="confirm-button" onClick={handleLogout}>Yes, Logout</button>
+            <button className="cancel-button" onClick={closeLogoutModal}>Cancel</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
